@@ -1,8 +1,8 @@
 //lista de productos
-const shampoo = "Shampoo solido 110 gr";
-const acondicionador = "Acondicionador solido 50 gr";
-const desodorante = "Desodorante solido 45 gr";
-const jabon = "Jabon facial 30gr";
+const shampoo = " Shampoo solido 110 gr ";
+const acondicionador = " Acondicionador solido 50 gr ";
+const desodorante = " Desodorante solido 45 gr ";
+const jabon = " Jabon facial 30gr ";
 
 //lista con el precio de cada producto
 const shampooP = 700;
@@ -22,16 +22,16 @@ const divisionCuotas = (precioProd, cantCuotas) => precioProd / cantCuotas;
 function concatenarProductos(seleccion){
     switch(seleccion){
         case "1":
-            listaProductos += shampoo += " ";
+            listaProductos += shampoo;
             break;
         case "2":
-            listaProductos += acondicionador += " ";
+            listaProductos += acondicionador;
             break;
         case "3":
-            listaProductos += desodorante += " ";
+            listaProductos += desodorante;
             break;
         case "4":
-            listaProductos += jabon += " ";
+            listaProductos += jabon;
             break;
     }
 }
@@ -81,6 +81,7 @@ function muestraCarrito(montoFinal, listadoFinal){
     "\n 3- 3 cuotas de $" + couta3 + " (con un interes del 10% sobre el total)"
     + "\n 4- 6 cuotas de $" + couta6 + " (con un interes del 10% sobre el total)"
     +"\n 5- salir")
+    msjFinCompra();
 }
 
 //mensaje despues de una compra
@@ -109,16 +110,17 @@ function msjInicio(){
 //funcion para el flujo
 function flujo(opcSelec){
     Number(opcSelec);
+    console.log(opcSelec);
     if (opcSelec == 5){
         msjMalondon();
-    }
-    else if (opcSelec == 6){
-        muestraCarrito(montoTotal, listaProductos);
     }
     else if (opcSelec < 5){
         concatenarProductos(opcSelec); 
         sumarPrecios(opcSelec);
         mensajeDos();
+    }
+    else if (opcSelec == 6){
+        muestraCarrito(montoTotal, listaProductos);
     }
     else{
         alert("La opcion ingresada no corresponde a ninguna opcion de la lista.");
