@@ -1,7 +1,7 @@
 {
   "name": "04debenedetto",
   "version": "1.0.0",
-  "description": "ecommerce de productos de cometica natural",
+  "description": "ecommerce de productos de cometica natural libre de maltrato animal",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -17,7 +17,8 @@
     "cuidado",
     "personal",
     "belleza",
-    "salud"
+    "salud",
+    "crueltyfree"
   ],
   "author": "Camila Debenedetto",
   "license": "ISC",
