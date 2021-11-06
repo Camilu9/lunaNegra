@@ -1,0 +1,36 @@
+.container-fluid img {
+  height: 40px;
+  width: 40px;
+  object-fit: cover; }
+
+body {
+  background-color: #ffe8d6; }
+
+h1 {
+  color: #a5a58d; }
+
+h2 {
+  color: #b7b7a4; }
+
+.bienvenida {
+  display: flex;
+  justify-content: center; }
+
+.subBienvenida {
+  display: flex;
+  justify-content: center;
+  text-align: center; }
+
+.carusel {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: auto; }
+
+footer {
+  display: flex;
+  justify-content: center; }
+
+footer img {
+  height: 80px;
+  width: 80px; }

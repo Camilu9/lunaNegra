@@ -57,12 +57,14 @@ function sumarPrecios(valor){
 //mensaje para continuar la compra
 function mensajeDos(){
     let eleccion = prompt("¿Desea agregar otro producto? Elija el numero de la opcion deseada:"
-    + "/n 1- Shampoo solido x 110 gr $700"
-    + "/n 2- Acondicionador solido x 50 gr $580"
-    + "/n 3- Desodorante solido x 45 gr $470"
-    + "/n 4- Jabon facial x 30 gr $350"
-    + "/n 5- Terminar la compra"
-    + "/n 6- Salir")
+    + "\n 1- Shampoo solido x 110 gr $700"
+    + "\n 2- Acondicionador solido x 50 gr $580"
+    + "\n 3- Desodorante solido x 45 gr $470"
+    + "\n 4- Jabon facial x 30 gr $350"
+    + "\n 5- Salir"
+    + "\n 6- Terminar la compra")
+
+    flujo(eleccion)
 }
 
 //funcion que devuelve el carrito
@@ -72,13 +74,13 @@ function muestraCarrito(montoFinal, listadoFinal){
     let couta6 = divisionCuotas(precioConInteres, 6);
 
     let mensajeFinal = prompt("Su carrito posee "+ listadoFinal +
-    "/n El monto total a pagar es de $"+ montoFinal +
-    "/n ¿Como desea abonar? Seleccione el numero de opcion deseada:"
-    + "/n 1- Efectivo/debito $" + montoFinal +
-    "/n 2- 1 cuota sin interes $" + montoFinal +
-    "/n 3- 3 cuotas de $" + couta3 + " (con un interes del 10% sobre el total)"
-    + "/n 4- 6 cuotas de $" + couta6 + " (con un interes del 10% sobre el total)"
-    +"/n 5- salir")
+    "\n El monto total a pagar es de $"+ montoFinal +
+    "\n ¿Como desea abonar? Seleccione el numero de opcion deseada:"
+    + "\n 1- Efectivo/debito $" + montoFinal +
+    "\n 2- 1 cuota sin interes $" + montoFinal +
+    "\n 3- 3 cuotas de $" + couta3 + " (con un interes del 10% sobre el total)"
+    + "\n 4- 6 cuotas de $" + couta6 + " (con un interes del 10% sobre el total)"
+    +"\n 5- salir")
 }
 
 //mensaje despues de una compra
@@ -94,10 +96,34 @@ function msjMalondon(){
 //mensaje de inicio del flujo
 function msjInicio(){
     let inicio = prompt("Bienvenido a la tienda virtual de Luna negra"
-    + "/n ¿Que desea comprar? Elija el numero de la opcion deseada:"
-    + "/n 1- Shampoo solido x 110 gr $700"
-    + "/n 2- Acondicionador solido x 50 gr $580"
-    + "/n 3- Desodorante solido x 45 gr $470"
-    + "/n 4- Jabon facial x 30 gr $350"
-    + "/n 5- Salir")
+    + "\n ¿Que desea comprar? Elija el numero de la opcion deseada:"
+    + "\n 1- Shampoo solido x 110 gr $700"
+    + "\n 2- Acondicionador solido x 50 gr $580"
+    + "\n 3- Desodorante solido x 45 gr $470"
+    + "\n 4- Jabon facial x 30 gr $350"
+    + "\n 5- Salir")
+
+    flujo(inicio);
 }
+
+//funcion para el flujo
+function flujo(opcSelec){
+    Number(opcSelec);
+    if (opcSelec == 5){
+        msjMalondon();
+    }
+    else if (opcSelec == 6){
+        muestraCarrito(montoTotal, listaProductos);
+    }
+    else if (opcSelec < 5){
+        concatenarProductos(opcSelec); 
+        sumarPrecios(opcSelec);
+        mensajeDos();
+    }
+    else{
+        alert("La opcion ingresada no corresponde a ninguna opcion de la lista.");
+        msjInicio();
+    }
+}
+
+msjInicio();
