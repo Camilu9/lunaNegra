@@ -49,7 +49,7 @@ function sumarPrecios(valor){
             montoTotal += desodoranteP;
             break;
         case "4":
-            montoTotal += jabon;
+            montoTotal += jabonP;
             break;
     }
 }
@@ -86,7 +86,9 @@ function muestraCarrito(montoFinal, listadoFinal){
 
 //mensaje despues de una compra
 function msjFinCompra(){
-    alert("¡Muchas gracias por su compra!")
+    alert("¡Muchas gracias por su compra! A continuacion le pedimos los datos para la entrega");
+    const cliente1 = new DatosCliente(prompt("Ingrese su nombre"), prompt("Ingrese su apellido"), prompt("Ingrese el nombre de su calle"), parseInt(prompt("Ingrese la altura de su casa")), parseInt(prompt("Ingrese su codigo postal")))
+    console.log(cliente1.fin())
 }
 
 //mensaje cuando no compran nada -.-
@@ -105,6 +107,21 @@ function msjInicio(){
     + "\n 5- Salir")
 
     flujo(inicio);
+}
+
+//clase para que el usuario brinde los datos de envio
+
+class DatosCliente {
+    constructor(nombre, apellido, calle, numero, cp) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.calle = calle;
+        this.numero = numero;
+        this.cp = cp;
+    }
+    fin() {
+        alert("Estimada/o " + this.nombre + " su pedido llegara en dos dias a la siguiente direccion: " + this.calle + " " + this.numero + ". Ante cualquier inconveniente comunicarse por md a nuestra cuenta de Instagram")
+    }
 }
 
 //funcion para el flujo
