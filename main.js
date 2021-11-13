@@ -11,7 +11,7 @@ const desodoranteP = 470;
 const jabonP = 350;
 
 //variables globales
-let listaProductos = "";
+let listaProductos = [];
 let montoTotal = 0;
 
 //funciones para cuotas
@@ -22,16 +22,16 @@ const divisionCuotas = (precioProd, cantCuotas) => precioProd / cantCuotas;
 function concatenarProductos(seleccion){
     switch(seleccion){
         case "1":
-            listaProductos += shampoo;
+            listaProductos.push(shampoo);
             break;
         case "2":
-            listaProductos += acondicionador;
+            listaProductos.push(acondicionador);
             break;
         case "3":
-            listaProductos += desodorante;
+            listaProductos.push(desodorante);
             break;
         case "4":
-            listaProductos += jabon;
+            listaProductos.push(jabon);
             break;
     }
 }
