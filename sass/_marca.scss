@@ -1,0 +1,47 @@
+//doy color al fondo de la pagina marca
+.bodyMarca{
+    background-color: $piel;
+}
+//doy margen a los div
+.marca div{
+    margin: 3%;
+}
+//doy fuente, color y centro el texto de los h1
+.marca h1{
+    font-family: 'Noto Serif Display', serif;
+    text-align: center;
+    color: $verde2;
+}
+//doy tamaño, color y centro el texto de los h2
+.marca h2{
+    text-align: center;
+    font-size: large;
+    color: $verde1;
+}
+//doy color y centro el texto de los h3
+.marca h3{
+    text-align: center;
+    color: $rosa2;
+}
+//doy fuente y centro el texto de los parrafos
+.marca p{
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-align: center;
+}
+//doy tamaño a las imagenes
+.marca img{
+    height: 100px;
+    width: 70px;
+}
+//doy funcion flexbox, wrap, centro el texto y los contenedores de algunos divs
+.primera, .segunda, .sexta, .segunda div div{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+//doy funcion flex y distancia a los contenedores del div
+.segunda div{
+    display: flex;
+    justify-content: space-between;
+}

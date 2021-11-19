@@ -14,29 +14,53 @@ nav li:hover {
 
 footer {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  margin: 3%; }
 
-footer img {
-  height: 80px;
-  width: 80px; }
+footer div {
+  margin: 3%; }
+
+.footerBases {
+  display: flex;
+  justify-content: space-between; }
+
+.footerBases img {
+  height: 100;
+  width: 70; }
+
+.footerRedes img {
+  align-content: center; }
+
+.footerRedes h3 {
+  font-size: medium;
+  color: #a5a58d; }
+
+.footerRedes img {
+  height: 50px;
+  width: 50px; }
 
 .body {
   background-color: #ffe8d6; }
 
-h1 {
-  color: #a5a58d; }
+.body h1 {
+  color: #a5a58d;
+  font-family: 'Spectral SC', serif; }
 
-h2 {
-  color: #b7b7a4; }
+.body h2 {
+  color: #b7b7a4;
+  font-size: large;
+  font-family: 'Cormorant SC', serif; }
 
 .bienvenida {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  margin: 3%; }
 
 .subBienvenida {
   display: flex;
   justify-content: center;
-  text-align: center; }
+  text-align: center;
+  margin: 3%; }
 
 .carusel {
   display: flex;
@@ -51,3 +75,41 @@ h2 {
 
 .bodyProduc {
   background-color: #b7b7a4; }
+
+.bodyMarca {
+  background-color: #ffe8d6; }
+
+.marca div {
+  margin: 3%; }
+
+.marca h1 {
+  font-family: 'Noto Serif Display', serif;
+  text-align: center;
+  color: #a5a58d; }
+
+.marca h2 {
+  text-align: center;
+  font-size: large;
+  color: #b7b7a4; }
+
+.marca h3 {
+  text-align: center;
+  color: #cb997e; }
+
+.marca p {
+  font-family: 'Open Sans Condensed', sans-serif;
+  text-align: center; }
+
+.marca img {
+  height: 100px;
+  width: 70px; }
+
+.primera, .segunda, .sexta, .segunda div div {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center; }
+
+.segunda div {
+  display: flex;
+  justify-content: space-between; }

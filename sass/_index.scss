@@ -3,23 +3,28 @@
     background-color: $piel;
     }
 
-h1 {
+.body h1 {
     color: $verde2;
+    font-family: 'Spectral SC', serif;
 }
 
-h2 {
-    color: $verde1
+.body h2 {
+    color: $verde1;
+    font-size: large;
+    font-family: 'Cormorant SC', serif;
 }
 
 .bienvenida {
     display: flex;
     justify-content: center;
+    margin: 3%;
 }
 
 .subBienvenida {
     display: flex;
     justify-content: center;
     text-align: center;
+    margin: 3%;
 }
 
 .carusel {
@@ -34,5 +39,6 @@ h2 {
     width: 600px;
     object-fit: cover;
 }
+
 
 

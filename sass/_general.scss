@@ -20,9 +20,33 @@ nav li:hover {
 footer {
     display: flex;
     justify-content: center;
+    margin: 3%;
 }
 
-footer img {
-    height: 80px;
-    width: 80px;
+footer div{
+    margin: 3%;
+}
+
+.footerBases {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footerBases img {
+    height: 100;
+    width: 70;
+}
+
+.footerRedes img{
+    align-content: center;
+}
+
+.footerRedes h3{
+    font-size: medium;
+    color: $verde2;
+}
+
+.footerRedes img {
+    height: 50px;
+    width: 50px;
 }
