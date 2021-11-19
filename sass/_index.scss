@@ -1,5 +1,5 @@
 //doy color de fondo a la pagina de inicio
-body {
+.body {
     background-color: $piel;
     }
 
@@ -29,12 +29,10 @@ h2 {
     padding: auto;
 }
 
-footer {
-    display: flex;
-    justify-content: center;
+.carousel-item img {
+    height: 450px;
+    width: 600px;
+    object-fit: cover;
 }
 
-footer img {
-    height: 80px;
-    width: 80px;
-}
+

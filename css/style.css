@@ -3,7 +3,24 @@
   width: 40px;
   object-fit: cover; }
 
-body {
+nav {
+  background-color: #cb997e; }
+
+nav li:hover {
+  background-color: #ddbea9; }
+
+.nav-item ul {
+  background-color: #cb997e; }
+
+footer {
+  display: flex;
+  justify-content: center; }
+
+footer img {
+  height: 80px;
+  width: 80px; }
+
+.body {
   background-color: #ffe8d6; }
 
 h1 {
@@ -27,10 +44,10 @@ h2 {
   margin: auto;
   padding: auto; }
 
-footer {
-  display: flex;
-  justify-content: center; }
+.carousel-item img {
+  height: 450px;
+  width: 600px;
+  object-fit: cover; }
 
-footer img {
-  height: 80px;
-  width: 80px; }
+.bodyProduc {
+  background-color: #b7b7a4; }

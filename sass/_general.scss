@@ -4,3 +4,25 @@
     width: 40px;
     object-fit: cover; 
 }
+
+nav {
+    background-color: $rosa2;
+}
+
+nav li:hover {
+    background-color: $rosa1; 
+}
+
+.nav-item ul {
+    background-color: $rosa2; 
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+footer img {
+    height: 80px;
+    width: 80px;
+}
