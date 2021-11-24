@@ -1,3 +1,4 @@
+
 //declaro una clase para crear productos
 class Producto {
     constructor(nombre, cantidad, precio, descripcion) {
@@ -9,7 +10,6 @@ class Producto {
 }
 
 //creo los productos
-
 const producto1 = new Producto("Shampoo solido de romero", "110 gr", 700, "Limpia el cabello y el cuero cabelludo sin dejar exceso de oleosidad. Para cabellos grasos.");
 const producto2 = new Producto("Shampoo solido de geranio", "110 gr", 700, "Limpia el cabello y el cuero cabelludo sin dejar exceso de oleosidad. Para cabellos secos.");
 const producto3 = new Producto("Acondicionador solido de vainilla", "50 gr", 580, "Nutre el cabello y sella las cuticulas del mismo post lavado. Para cabellos debiles.");
@@ -43,6 +43,10 @@ const producto29 = new Producto("Discos desmaquillantes", "4 unidades", 550, "Ki
 //creo un array para almacenar los productos
 let productos = [producto1, producto2, producto3, producto4, producto5, producto6, producto7, producto8, producto9, producto10, producto11, producto12, producto13, producto14, producto15, producto16, producto17, producto18, producto19, producto20, producto21, producto22, producto23, producto24, producto25, producto26, producto27, producto28, producto29];
 
+//guardo los productos en el local storage
+const enJSON = JSON.stringify(productos)
+localStorage.setItem("productos", enJSON)
+
 //Creo una variable para manipular el div productos
 let divProductos = document.getElementById('productos')
 
@@ -52,12 +56,18 @@ productos.forEach((producto, indice) => {
     <div class="card" id="producto${indice + 1}" style="width: 18rem;">
         <img src="../multimedia/productos/producto${indice + 1}.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Nombre: ${producto.nombre}</h5>
+            <h5 class="card-title">Producto: ${producto.nombre}</h5>
             <p class="card-text">Cantidad: ${producto.cantidad}</p>
-            <p class="card-text">Precio: ${producto.precio} </p>
+            <p class="card-text">Precio: $${producto.precio} </p>
             <p class="card-text">Descripcion: ${producto.descripcion}</p>
-            <a href="#" class="btn btn-primary" id="boton${indice+1}">Agregar</a>
+            <a href="#" class="btn btn-primary"  id="boton"  name="boton${indice+1}">Agregar</a>
         </div>
     </div>
     `
 })
+
+let btAgregar = document.getElementsById("boton");
+btAgregar.addEventListener('click', agregarProducto);
+function agregarProducto (e){
+    console.log("hola")
+}
