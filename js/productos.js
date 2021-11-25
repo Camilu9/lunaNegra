@@ -67,11 +67,24 @@ productos.forEach((producto, indice) => {
     `
 })
 
+//recorro los productos, creo la variable para el boton, escucho el evento click y le doy una funcion
 for (let producto of productos){
-let btAgregar = document.getElementById(`boton${producto.id}`);
-btAgregar.addEventListener('click', agregarProducto);
-function agregarProducto(){
-    //console.log(`El producto ${producto.nombre} ha sido agregado!`)
-    localStorage.setItem("carrito", producto)
-}
+    let btAgregar = document.getElementById(`boton${producto.id}`);
+    btAgregar.addEventListener('click', agregarProducto);
+    //creo una funcion que agregue al array carritos los productos agregados por el usuario, en el localstorage
+    function agregarProducto(){
+        let carrito = "carrito"
+        //le digo a la funcion que hacer en caso de que se agregue un nuevo producto al array carrito
+        if(localStorage.getItem(carrito)){  
+            let prodIngresados = []
+            prodIngresados.push(localStorage.getItem(carrito) || []);
+            let nuevoIngreso = {producto};
+            prodIngresados.push(nuevoIngreso);
+            localStorage.setItem(carrito, JSON.stringify(prodIngresados));          
+        }
+        //en caso de que aun no exista el carrito, crea un carrito (array)
+        else{
+            localStorage.setItem(carrito, JSON.stringify(producto));
+        }    
+    }
 }
