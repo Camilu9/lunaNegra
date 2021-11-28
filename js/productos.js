@@ -74,17 +74,43 @@ for (let producto of productos){
     //creo una funcion que agregue al array carritos los productos agregados por el usuario, en el localstorage
     function agregarProducto(){
         let carrito = "carrito"
-        //le digo a la funcion que hacer en caso de que se agregue un nuevo producto al array carrito
+        //le digo a la funcion que hacer en caso de que se agregue un nuevo producto al array carrito y llamo a la funcion que ejecuta el alert
         if(localStorage.getItem(carrito)){  
             let prodIngresados = []
             prodIngresados.push(localStorage.getItem(carrito) || []);
-            let nuevoIngreso = {producto};
-            prodIngresados.push(nuevoIngreso);
-            localStorage.setItem(carrito, JSON.stringify(prodIngresados));          
+            let nuevoIngreso = producto.nombre;
+            prodIngresados.push(JSON.stringify(nuevoIngreso));
+            localStorage.setItem(carrito, prodIngresados);          
+            alertaAgrego()
         }
-        //en caso de que aun no exista el carrito, crea un carrito (array)
+        //en caso de que aun no exista el carrito, crea un carrito (array) y llamo a la funcion que ejecuta el alert
         else{
-            localStorage.setItem(carrito, JSON.stringify(producto));
+            localStorage.setItem(carrito, JSON.stringify(producto.nombre));
+            alertaAgrego()
         }    
     }
 }
+
+//funcion para ejecutar un alert
+function alertaAgrego() {
+    alert("el producto fue agregado a su carrito, puede revisar el contenido del mismo haciendo click en el boton \"Carrito de compras\"")
+}
+
+
+//creo una variable para asignarle el boton
+let btnCarrito = document.getElementById('carritoBtn');
+//creo una variable para seleccionar el div donde voy a insertar el html
+let mensaje = document.getElementById('msjCarrito');
+//inserto en el html un alert de bootstrap que devuelve lo guardado en localstorage
+btnCarrito.onclick = () =>{
+    mensaje.innerHTML = `
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <h4>Estos son los productos de tu carrito</h4>
+        <p>${localStorage.getItem("carrito")}</p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    `
+}
+
+
+
