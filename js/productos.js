@@ -62,32 +62,50 @@ productos.forEach((producto, indice) => {
             <p class="card-text">Precio: $${producto.precio} </p>
             <p class="card-text">Descripcion: ${producto.descripcion}</p>
             <a href="#" class="btn btn-primary"  id="boton${producto.id}"  name="boton${producto.id}">Agregar</a>
+            <a href="#" class="btn btn-danger"  id="borrar${producto.id}"  name="boton${producto.id}">Eliminar</a>
         </div>
     </div>
     `
 })
 
-//recorro los productos, creo la variable para el boton, escucho el evento click y le doy una funcion
+//creo el array para guardar los nombres de los productos
+let concatProduct = [];
+//creo la variable para sumar los precios de los productos
+let sumarPrecios = 0;
+
+//funciones del boton agregar
+//recorro los productos, creo la variable para el boton, escucho el evento click y le doy una funcion de agregar el nombre de los productos agregados
 for (let producto of productos){
     let btAgregar = document.getElementById(`boton${producto.id}`);
     btAgregar.addEventListener('click', agregarProducto);
-    //creo una funcion que agregue al array carritos los productos agregados por el usuario, en el localstorage
-    function agregarProducto(){
-        let carrito = "carrito"
-        //le digo a la funcion que hacer en caso de que se agregue un nuevo producto al array carrito y llamo a la funcion que ejecuta el alert
-        if(localStorage.getItem(carrito)){  
-            let prodIngresados = []
-            prodIngresados.push(localStorage.getItem(carrito) || []);
-            let nuevoIngreso = producto.nombre;
-            prodIngresados.push(JSON.stringify(nuevoIngreso));
-            localStorage.setItem(carrito, prodIngresados);          
-            alertaAgrego()
-        }
-        //en caso de que aun no exista el carrito, crea un carrito (array) y llamo a la funcion que ejecuta el alert
-        else{
-            localStorage.setItem(carrito, JSON.stringify(producto.nombre));
-            alertaAgrego()
-        }    
+    function agregarProducto() {
+        concatProduct.push(producto.nombre)
+    }
+}
+//recorro los productos, creo la variable para el boton agregar, escucho el evento click y le doy una funcion de agregar el precio de los productos agregados
+for (let producto of productos){
+    let btAgregar = document.getElementById(`boton${producto.id}`);
+    btAgregar.addEventListener('click', agregarPrecio);
+    function agregarPrecio() {
+        sumarPrecios += producto.precio
+    }
+}
+
+//funciones para el boton eliminar
+//recorro los productos, creo la variable del boton borrar, escucho el click y le doy funcion de borrar los nombres de los productos
+for (let producto of productos){
+    let btAgregar = document.getElementById(`borrar${producto.id}`);
+    btAgregar.addEventListener('click', borrarProducto);
+    function borrarProducto() {
+        concatProduct.pop(producto.nombre)
+    }
+}
+////recorro los productos, creo la variable del boton borrar, escucho el click y le doy funcion de borrar los precios de los productos
+for (let producto of productos){
+    let btAgregar = document.getElementById(`borrar${producto.id}`);
+    btAgregar.addEventListener('click', borrarPrecio);
+    function borrarPrecio() {
+        sumarPrecios -= producto.precio
     }
 }
 
@@ -106,7 +124,9 @@ btnCarrito.onclick = () =>{
     mensaje.innerHTML = `
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
         <h4>Estos son los productos de tu carrito</h4>
-        <p>${localStorage.getItem("carrito")}</p>
+        <p>${concatProduct}</p>
+        <h6>Este es el valor acumulado</h6>
+        <p>$${sumarPrecios}</p>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     `
