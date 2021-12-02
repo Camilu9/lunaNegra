@@ -102,15 +102,27 @@ let btnCarrito = document.getElementById('carritoBtn');
 let tablaCarrito = document.getElementById('tablaProd');
 
 //recorro el array donde guardo los productos del carrito y creo la tabla con sus nombres
-btnCarrito.onclick = () =>{
+function llamoCarrito() {
     for (let i = 0; i < concatProduct.length; i+=1) {
         tablaCarrito.innerHTML += `
             <tr>
                 <td>${concatProduct[i]}</td>
                 <td><button type="button" id="eliminarBtn class="btn btn-danger">Elimiar de carrito</button></td>
             </tr>
-            `
+        `
     }
+}
+
+//escucho el evento click en el boton de carrito y llamo a carrito
+btnCarrito.onclick = () =>{
+    llamoCarrito();
+}
+
+//creo el boton cerrar
+let botonCerrar = document.getElementById("btnCerrar")
+//refrezco la pagina cuando hacen click en boton cerrar
+botonCerrar.onclick = () =>{
+    location.reload()
 }
 
 //creo una variable para asignar el boton de eliminar
