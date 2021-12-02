@@ -84,7 +84,7 @@ footer div {
   justify-content: center;
   margin: 2.5%; }
 
-.button {
+#carritoBtn {
   display: inline-block;
   border-radius: 4px;
   background-color: #6b705c;
@@ -93,18 +93,18 @@ footer div {
   text-align: center;
   font-size: 20px;
   padding: 10px;
-  width: 50%;
+  width: 20%;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px; }
 
-.button span {
+#carritoBtn span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s; }
 
-.button span:after {
+#carritoBtn span:after {
   content: #b7b7a4;
   position: absolute;
   opacity: 0;
@@ -112,10 +112,10 @@ footer div {
   right: -20px;
   transition: 0.5s; }
 
-.button:hover span {
+#carritoBtn:hover span {
   padding-right: 25px; }
 
-.button:hover span:after {
+#carritoBtn:hover span:after {
   opacity: 1;
   right: 0; }
 

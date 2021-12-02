@@ -57,12 +57,11 @@ productos.forEach((producto, indice) => {
     <div class="card" id="producto${producto.id}" style="width: 18rem;">
         <img src="../multimedia/productos/producto${producto.id}.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Producto: ${producto.nombre}</h5>
+            <h5 class="card-title">${producto.nombre}</h5>
             <p class="card-text">Cantidad: ${producto.cantidad}</p>
             <p class="card-text">Precio: $${producto.precio} </p>
             <p class="card-text">Descripcion: ${producto.descripcion}</p>
             <a href="#" class="btn btn-primary"  id="boton${producto.id}"  name="boton${producto.id}">Agregar</a>
-            <a href="#" class="btn btn-danger"  id="borrar${producto.id}"  name="boton${producto.id}">Eliminar</a>
         </div>
     </div>
     `
@@ -79,7 +78,8 @@ for (let producto of productos){
     let btAgregar = document.getElementById(`boton${producto.id}`);
     btAgregar.addEventListener('click', agregarProducto);
     function agregarProducto() {
-        concatProduct.push(producto.nombre)
+        concatProduct.push(producto.nombre);
+        agregado();
     }
 }
 //recorro los productos, creo la variable para el boton agregar, escucho el evento click y le doy una funcion de agregar el precio de los productos agregados
@@ -91,46 +91,40 @@ for (let producto of productos){
     }
 }
 
-//funciones para el boton eliminar
-//recorro los productos, creo la variable del boton borrar, escucho el click y le doy funcion de borrar los nombres de los productos
-for (let producto of productos){
-    let btAgregar = document.getElementById(`borrar${producto.id}`);
-    btAgregar.addEventListener('click', borrarProducto);
-    function borrarProducto() {
-        concatProduct.pop(producto.nombre)
-    }
+//creo funcion para avisar que el producto se agrego al carrito
+function agregado() {
+    alert("Su producto fue agregado al carrito con éxito")
 }
-////recorro los productos, creo la variable del boton borrar, escucho el click y le doy funcion de borrar los precios de los productos
-for (let producto of productos){
-    let btAgregar = document.getElementById(`borrar${producto.id}`);
-    btAgregar.addEventListener('click', borrarPrecio);
-    function borrarPrecio() {
-        sumarPrecios -= producto.precio
-    }
-}
-
-//funcion para ejecutar un alert
-function alertaAgrego() {
-    alert("el producto fue agregado a su carrito, puede revisar el contenido del mismo haciendo click en el boton \"Carrito de compras\"")
-}
-
 
 //creo una variable para asignarle el boton
 let btnCarrito = document.getElementById('carritoBtn');
 //creo una variable para seleccionar el div donde voy a insertar el html
-let mensaje = document.getElementById('msjCarrito');
-//inserto en el html un alert de bootstrap que devuelve lo guardado en localstorage
+let tablaCarrito = document.getElementById('tablaProd');
+
+//recorro el array donde guardo los productos del carrito y creo la tabla con sus nombres
 btnCarrito.onclick = () =>{
-    mensaje.innerHTML = `
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <h4>Estos son los productos de tu carrito</h4>
-        <p>${concatProduct}</p>
-        <h6>Este es el valor acumulado</h6>
-        <p>$${sumarPrecios}</p>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-    `
+    for (let i = 0; i < concatProduct.length; i+=1) {
+        tablaCarrito.innerHTML += `
+            <tr>
+                <td>${concatProduct[i]}</td>
+                <td><button type="button" id="eliminarBtn class="btn btn-danger">Elimiar de carrito</button></td>
+            </tr>
+            `
+    }
 }
 
+//creo una variable para asignar el boton de eliminar
+let btnEliminar = document.getElementById('eliminarBtn');
 
-
+//Esto esta en proceso
+btnEliminar.onclick = () =>{
+    for (let i = 0; i < concatProduct.length; i+=1) {
+        tablaCarrito.innerHTML -= `
+            <tr>
+                <td>${concatProduct[i]}</td>
+                <td><button type="button" id="eliminarBtn class="btn btn-danger">Elimiar de carrito</button></td>
+            </tr>
+            `
+        concatProduct.splice(index, i)
+    }
+}
