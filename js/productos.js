@@ -120,7 +120,7 @@ btnCarrito.onclick = () =>{
 
 //creo el boton cerrar
 let botonCerrar = document.getElementById("btnCerrar")
-//refrezco la pagina cuando hacen click en boton cerrar
+//refrezco la pagina cuando hacen click en boton cerrar (esto es momentaneo, voy a buscar la forma correcta de hacerlo)
 botonCerrar.onclick = () =>{
     location.reload()
 }
@@ -128,7 +128,17 @@ botonCerrar.onclick = () =>{
 //creo una variable para asignar el boton de eliminar
 let btnEliminar = document.getElementById('eliminarBtn');
 
-//Esto esta en proceso
+//creo un h4 cuando hagan click en el boton carrito (no pude concatenar a la variable sumarPrecios)
+$(() => {
+    $("#carritoBtn").click(function() {
+        $("#totalFinal").append('<h4>El valor total de su compra es de: $ ${sumarPrecios} </h4>');
+    })
+})
+
+
+
+//Esto esta en proceso, aun no encontre la forma que funcione 
+/*
 btnEliminar.onclick = () =>{
     for (let i = 0; i < concatProduct.length; i+=1) {
         tablaCarrito.innerHTML -= `
@@ -140,3 +150,4 @@ btnEliminar.onclick = () =>{
         concatProduct.splice(index, i)
     }
 }
+*/
