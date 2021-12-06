@@ -133,6 +133,9 @@ $(() => {
     $("#carritoBtn").click(function() {
         $("#totalFinal").append('<h4>El valor total de su compra es de: $ ${sumarPrecios} </h4>');
     })
+    //creo animaciones concatenadas en las cards
+    $(".card").hide(500)
+    .show(2000)
 })
 
 
