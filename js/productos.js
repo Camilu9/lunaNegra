@@ -1,4 +1,3 @@
-
 //declaro una clase para crear productos
 class Producto {
     constructor(id, nombre, cantidad, precio, descripcion) {
@@ -44,10 +43,6 @@ const producto29 = new Producto(29,"Discos desmaquillantes", "4 unidades", 550, 
 //creo un array para almacenar los productos
 let productos = [producto1, producto2, producto3, producto4, producto5, producto6, producto7, producto8, producto9, producto10, producto11, producto12, producto13, producto14, producto15, producto16, producto17, producto18, producto19, producto20, producto21, producto22, producto23, producto24, producto25, producto26, producto27, producto28, producto29];
 
-//guardo los productos en el local storage
-const enJSON = JSON.stringify(productos)
-localStorage.setItem("productos", enJSON)
-
 //Creo una variable para manipular el div productos
 let divProductos = document.getElementById('productos')
 
@@ -69,88 +64,82 @@ productos.forEach((producto, indice) => {
 
 //creo el array para guardar los nombres de los productos
 let concatProduct = [];
-//creo la variable para sumar los precios de los productos
-let sumarPrecios = 0;
+//creo un array para guardar los precios
+let precios = [];
 
-//funciones del boton agregar
-//recorro los productos, creo la variable para el boton, escucho el evento click y le doy una funcion de agregar el nombre de los productos agregados
-for (let producto of productos){
-    let btAgregar = document.getElementById(`boton${producto.id}`);
-    btAgregar.addEventListener('click', agregarProducto);
-    function agregarProducto() {
-        concatProduct.push(producto.nombre);
-        agregado();
-    }
-}
-//recorro los productos, creo la variable para el boton agregar, escucho el evento click y le doy una funcion de agregar el precio de los productos agregados
-for (let producto of productos){
-    let btAgregar = document.getElementById(`boton${producto.id}`);
-    btAgregar.addEventListener('click', agregarPrecio);
-    function agregarPrecio() {
-        sumarPrecios += producto.precio
-    }
+//creo una funcion con una variable que traiga los precios del local storage y los sume; y me retorne el precio final de la compra
+function precioFinal() {
+    let preciosLocalStorage = JSON.parse(localStorage.getItem("precios"));
+    let suma = (valorAnterior, valorNuevo) => valorAnterior + valorNuevo;
+    return preciosLocalStorage.reduce(suma);
 }
 
+
+//funciones del boton agregar:
 //creo funcion para avisar que el producto se agrego al carrito
 function agregado() {
     alert("Su producto fue agregado al carrito con éxito")
 }
 
-//creo una variable para asignarle el boton
+//recorro los productos, creo la variable para el boton, escucho el evento click y le doy una funcion de agregar el nombre de los productos agregados y el precio a las diferentes key y muestro alert de que el producto fue agregado con exito
+for (let producto of productos){
+    let btAgregar = document.getElementById(`boton${producto.id}`);
+    btAgregar.addEventListener('click', agregarProducto);
+    function agregarProducto() {
+        concatProduct.push(producto.nombre);
+        precios.push(producto.precio);
+        localStorage.setItem("carrito", JSON.stringify(concatProduct));
+        localStorage.setItem("precios", JSON.stringify(precios));
+        agregado();
+    }
+}
+
+//creo una variable para asignarle el boton del carrito
 let btnCarrito = document.getElementById('carritoBtn');
-//creo una variable para seleccionar el div donde voy a insertar el html
+
+//creo una variable para seleccionar el div donde voy a insertar el html en la tabla de productos
 let tablaCarrito = document.getElementById('tablaProd');
 
-//recorro el array donde guardo los productos del carrito y creo la tabla con sus nombres
+//devuelvo los productos y precios dentro de una tabla en el carrito
 function llamoCarrito() {
-    for (let i = 0; i < concatProduct.length; i+=1) {
+    let misProductos = JSON.parse(localStorage.getItem("carrito"));
+    let misPrecios = JSON.parse(localStorage.getItem("precios"));
+    for (let i = 0; i < misProductos.length; i+=1){
         tablaCarrito.innerHTML += `
             <tr>
-                <td>${concatProduct[i]}</td>
-                <td><button type="button" id="eliminarBtn class="btn btn-danger">Elimiar de carrito</button></td>
+                <td>${misProductos[i]}  </td>
+                <td> $${misPrecios[i]}</td>
             </tr>
         `
     }
 }
 
-//escucho el evento click en el boton de carrito y llamo a carrito
+//escucho el evento click en el boton de carrito y llamo a la funcion carrito
 btnCarrito.onclick = () =>{
     llamoCarrito();
 }
 
-//creo el boton cerrar
+//creo el boton cerrar del carrito
 let botonCerrar = document.getElementById("btnCerrar")
-//refrezco la pagina cuando hacen click en boton cerrar (esto es momentaneo, voy a buscar la forma correcta de hacerlo)
+//creo el div donde voy a imprimir el precio total de la compra
+let divTotal = document.getElementById("totalFinal")
+
+//cuando hagan click en el boton cerrar ya no van a acumularse los productos y los precios totales repetidamente
 botonCerrar.onclick = () =>{
-    location.reload()
+    tablaCarrito.innerHTML="";
+    divTotal.innerHTML="";
 }
 
-//creo una variable para asignar el boton de eliminar
-let btnEliminar = document.getElementById('eliminarBtn');
-
-//creo un h4 cuando hagan click en el boton carrito (no pude concatenar a la variable sumarPrecios)
+//creo un h4 que muestre el precio final de la compra, cuando hagan click en el boton carrito 
 $(() => {
     $("#carritoBtn").click(function() {
-        $("#totalFinal").append('<h4>El valor total de su compra es de: $ ${sumarPrecios} </h4>');
+        $("#totalFinal").append(`<h4>El valor total de su compra es de: $${precioFinal()}</h4>`);
+    }),
+    //creo animaciones anidadas en las cards
+    $(".card").hide().show(1000)
     })
-    //creo animaciones concatenadas en las cards
-    $(".card").hide(500)
-    .show(2000)
-})
 
-
-
-//Esto esta en proceso, aun no encontre la forma que funcione 
-/*
-btnEliminar.onclick = () =>{
-    for (let i = 0; i < concatProduct.length; i+=1) {
-        tablaCarrito.innerHTML -= `
-            <tr>
-                <td>${concatProduct[i]}</td>
-                <td><button type="button" id="eliminarBtn class="btn btn-danger">Elimiar de carrito</button></td>
-            </tr>
-            `
-        concatProduct.splice(index, i)
+    let finalizar = document.getElementById("fin");
+    finalizar.onclick = () =>{
+        alert("Muchas gracias por su compra!")
     }
-}
-*/

@@ -9,9 +9,6 @@ nav {
 nav li:hover {
   background-color: #ddbea9; }
 
-.nav-item ul {
-  background-color: #cb997e; }
-
 footer {
   display: flex;
   justify-content: center;
@@ -38,6 +35,33 @@ footer div {
 .footerRedes img {
   height: 50px;
   width: 50px; }
+
+@media only screen and (max-width: 576px) {
+  p {
+    font-size: small; }
+  h1 {
+    font-size: medium; }
+  h2 {
+    font-size: medium; }
+  h3 {
+    font-size: small; }
+  h4 {
+    font-size: small; }
+  .card img {
+    height: 140px;
+    width: 250px;
+    object-fit: cover; }
+  .card {
+    height: 450px;
+    width: 250px; }
+  #carouselExampleIndicators {
+    height: 250px;
+    width: 250px;
+    object-fit: cover; }
+  .footerBases div img {
+    height: 60px;
+    width: 40px;
+    border-radius: 2em; } }
 
 .body {
   background-color: #ffe8d6; }
@@ -69,9 +93,34 @@ footer div {
   padding: auto; }
 
 .carousel-item img {
-  height: 450px;
+  height: auto;
   width: 600px;
   object-fit: cover; }
+
+.footerBases {
+  display: flex;
+  justify-content: space-around; }
+
+.footerBases div img {
+  height: 100px;
+  width: 80px;
+  border-radius: 2em; }
+
+.footerRedes {
+  display: flex;
+  justify-content: center;
+  text-align: center; }
+
+.imgIg {
+  display: flex;
+  justify-content: center; }
+
+.imgIg img {
+  height: 30px;
+  width: 30px; }
+
+footer {
+  background-color: #cb997e; }
 
 .bodyProduc {
   background-color: #b7b7a4; }
@@ -147,6 +196,7 @@ footer div {
   height: 100px;
   width: 70px; }
 
+funcion flexbox, wrap, centro el texto y los contenedores de algunos divs
 .primera, .segunda, .sexta, .segunda div div {
   display: flex;
   flex-wrap: wrap;

@@ -1,4 +1,4 @@
-//doy tamaño al logo dentro del nav
+//doy estilo al nav
 .container-fluid img{
     height: 40px;
     width: 40px;
@@ -13,10 +13,7 @@ nav li:hover {
     background-color: $rosa1; 
 }
 
-.nav-item ul {
-    background-color: $rosa2; 
-}
-
+//doy estilo al footer
 footer {
     display: flex;
     justify-content: center;
@@ -49,4 +46,36 @@ footer div{
 .footerRedes img {
     height: 50px;
     width: 50px;
+}
+
+//hago el sitio resposive para telefonos celulares
+@media only screen and (max-width: 576px) {
+    p {
+        font-size: small; };
+    h1 {
+        font-size: medium; };
+    h2 {
+        font-size: medium; }
+    h3 {
+        font-size: small;
+    }
+    h4 {
+        font-size: small;
+    }
+    .card img {
+        height: 140px;
+        width: 250px;
+        object-fit: cover; }
+    .card {
+        height: 450px;
+        width: 250px; }
+    #carouselExampleIndicators {
+        height: 250px;
+        width: 250px;
+        object-fit: cover; }
+    .footerBases div img{
+        height: 60px;
+        width: 40px;
+        border-radius: 2em;
+    }
 }

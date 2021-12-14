@@ -1,11 +1,14 @@
+//doy color al fondo de la pagina
 .bodyProduc {
     background-color: $verde1;
 }
 
+//le doy margen a las cards
 .card{
     margin: 2%;
 }
 
+//doy estilo al carrito
 .carrito {
     display: flex;
     justify-content: center;

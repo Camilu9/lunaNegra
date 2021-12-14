@@ -3,6 +3,7 @@
     background-color: $piel;
     }
 
+//doy estilo a los titulos
 .body h1 {
     color: $verde2;
     font-family: 'Spectral SC', serif;
@@ -27,6 +28,7 @@
     margin: 3%;
 }
 
+//doy estilos al carousel
 .carusel {
     display: flex;
     justify-content: center;
@@ -35,9 +37,41 @@
 }
 
 .carousel-item img {
-    height: 450px;
+    height: auto;
     width: 600px;
     object-fit: cover;
+}
+
+//doy estilo al footer
+.footerBases{
+    display: flex;
+    justify-content: space-around;
+}
+
+.footerBases div img{
+    height: 100px;
+    width: 80px;
+    border-radius: 2em;
+}
+
+.footerRedes{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.imgIg{
+    display: flex;
+    justify-content: center;
+}
+
+.imgIg img{
+    height: 30px;
+    width: 30px;
+}
+
+footer{
+    background-color: $rosa2;
 }
 
 

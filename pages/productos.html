@@ -29,16 +29,8 @@
                         <li class="nav-item">
                             <a class="nav-link" href="marca.html">Marca</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="productos.html" id="navbarDropdownMenuLink" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Productos
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="productos.html">Para el cabello</a></li>
-                                <li><a class="dropdown-item" href="productos.html">Cuidados faciales</a></li>
-                                <li><a class="dropdown-item" href="productos.html">Cuidado general</a></li>
-                            </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="productos.html">Productos</a>
                         </li>
                     </ul>
                 </div>
@@ -50,17 +42,22 @@
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header">
                 <h5 id="offcanvasRightLabel">Tu carrito de compras</h5>
-                <button type="button" class="btn-close text-reset" id="btnCerrar" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <button type="button" class="btn-close text-reset"id="btnCerrar" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-                <table id="tablaProd">
+                <table>
                     <tr>
-                        <td>Producto</td>
-                        <td>Eliminar</td>
+                        <td><p>Producto /</p></td>
+                        <td><p>Precio</p></td>
                     </tr>
+                </table>
+                <table id="tablaProd">
                 </table>
             </div>
             <div id="totalFinal">
+            </div>
+            <div>
+                <button type="button" id="fin" class="btn btn-info">Finalizar la compra</button>
             </div>
         </div>
     </div>
@@ -68,6 +65,27 @@
     </div>
     <div id="productos" class="row">
     </div>
+    <footer>
+        <div>
+            <div class="footerBases">
+                <div>
+                    <img src="../multimedia/natural.jpg" alt="">
+                </div>
+                <div>
+                    <img src="../multimedia/mano.jpg" alt="">
+                </div>
+                <div>
+                    <img src="../multimedia/libre.jpg" alt="">
+                </div>
+            </div>
+            <div class="footerRedes">
+                <h4>Seguinos en nuestro Instagram</h4>
+            </div>
+            <div class="imgIg">
+                <a href="https://instagram.com/lunanegra.cn?utm_medium=copy_link" target="_blank"><img src="../multimedia/logo_ig.png"></a>
+            </div>
+        </div>
+    </footer>
     <script src="../jquery-3.6.0.min.js"></script>
     <script src="../js/productos.js"></script>
 </body>
