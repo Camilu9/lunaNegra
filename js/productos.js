@@ -139,6 +139,7 @@ $(() => {
     $(".card").hide().show(1000)
     })
 
+//creo una variable para el boton fin, escucho el evento fin, muestro un alert y refresco la pagina
     let finalizar = document.getElementById("fin");
     finalizar.onclick = () =>{
         alert("Muchas gracias por su compra!")
