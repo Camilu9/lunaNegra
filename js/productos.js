@@ -142,4 +142,5 @@ $(() => {
     let finalizar = document.getElementById("fin");
     finalizar.onclick = () =>{
         alert("Muchas gracias por su compra!")
+        location.reload();
     }
