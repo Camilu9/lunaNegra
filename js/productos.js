@@ -121,7 +121,7 @@ $(() => {
         }
     }),
     //creo animaciones anidadas en las cards
-    $(".card").hide().show(1000)
+    $(".card").hide(20).show(1000)
     })
 
 //creo una variable para el boton que finaliza la compra
