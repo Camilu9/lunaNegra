@@ -1,0 +1,18 @@
+#bodyForm{
+    background-color: $verde1;
+}
+
+#bodyForm h1{
+    color: $verde3;
+    text-decoration: underline;
+}
+
+#envioForm{
+    background-color: $verde3;
+    margin: 5%;
+}
+
+#bodyForm{
+    display: flex;
+    justify-content: center;
+}

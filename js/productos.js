@@ -1,65 +1,24 @@
-//declaro una clase para crear productos
-class Producto {
-    constructor(id, nombre, cantidad, precio, descripcion) {
-        this.id = id;
-        this.nombre = nombre;
-        this.cantidad = cantidad;
-        this.precio = precio;
-        this.descripcion = descripcion;
-    }
-}
-
-//creo los productos
-const producto1 = new Producto(1,"Shampoo solido de romero", "110 gr", 700, "Limpia el cabello y el cuero cabelludo sin dejar exceso de oleosidad. Para cabellos grasos.");
-const producto2 = new Producto(2,"Shampoo solido de geranio", "110 gr", 700, "Limpia el cabello y el cuero cabelludo sin dejar exceso de oleosidad. Para cabellos secos.");
-const producto3 = new Producto(3,"Acondicionador solido de vainilla", "50 gr", 580, "Nutre el cabello y sella las cuticulas del mismo post lavado. Para cabellos debiles.");
-const producto4 = new Producto(4,"Acondicionador solido de azahar", "50 gr", 580, "Nutre el cabello y sella las cuticulas del mismo post lavado. Para cabellos secos.");
-const producto5 = new Producto(5,"Aceite de coco", "100 gr", 400, "Humectante corporal, serum para cabellos con rulos u ondulados.");
-const producto6 = new Producto(6,"Gel dental", "100 gr", 530, "Limpia y desinfecta la boca. Poder antibacteriano y antifungico.");
-const producto7 = new Producto(7,"Desodorante solido", "45 gr", 470, "Evita la proliferacion de olores en las axilas sin obstruir los poros. Antibacteriano y antifungico.");
-const producto8 = new Producto(8,"Desodorante en crema", "100 gr", 470, "Evita la proliferacion de olores en las axilas sin obstruir los poros. Antibacteriano y antifungico.");
-const producto9 = new Producto(9,"Balsamo labial", "13 gr", 300, "humecta y repara la piel de los labios. Vainilla.");
-const producto10 = new Producto(10,"oleo corporal", "35 gr", 350, "Humecta y nutre la piel del cuerpo. Trata areas resecas. Azahar.");
-const producto11 = new Producto(11,"Crema para manos", "100 gr", 620, "Humecta y repara la piel de las manos.");
-const producto12 = new Producto(12,"Crema corporal", "250 gr", 1160, "Hidrata, humecta y nutre la piel del cuerpo. Brinda proteccion y suavidad.");
-const producto13 = new Producto(13,"Jabon facial Madagascar", "30 gr", 350, "Realiza una limpieza profunda del rostro de acuerdo a sus necesidades. Pieles secas. Uso diario.");
-const producto14 = new Producto(14,"Jabon facial Amazonia", "30 gr", 350, "Realiza una limpieza profunda del rostro de acuerdo a sus necesidades. Pieles grasas. Uso diario.");
-const producto15 = new Producto(15,"Jabon facial Malesia", "30 gr", 350, "Realiza una limpieza profunda del rostro de acuerdo a sus necesidades. Pieles sensibles y maduras. Uso diario.");
-const producto16 = new Producto(16,"Gel de limpieza facial", "100 gr", 530, "Limpia e hidrata la piel del rostro delicadamente. Quita el maquillaje. Lavanda.");
-const producto17 = new Producto(17,"Hidrolato de lavanda", "100 cc", 520, "Tonico natural.");
-const producto18 = new Producto(18,"Hidrolato de romero", "100 cc", 520, "Tonico natural.");
-const producto19 = new Producto(19,"Agua micelar de azahar y geranio", "100 cc", 470, "Limpia y nutre la piel del rostro. Pieles normales a secas.");
-const producto20 = new Producto(20,"Agua micelar de romero y arbol de te", "100 cc", 470, "Limpia y nutre la piel del rostro. Pieles grasas.");
-const producto21 = new Producto(21,"Crema facial de dia", "100 gr", 760, "Hidrata, humecta y nutre el rostro acorde a sus necesidades durante el dia. Para pieles normales a secas.");
-const producto22 = new Producto(22,"Crema facial de dia", "100 gr", 760, "Hidrata, humecta y nutre el rostro acorde a sus necesidades durante el dia. Para pieles grasas.");
-const producto23 = new Producto(23,"Crema facial de noche", "100 gr", 800, "Regenerante y antioxidante. Apta para todo tipo de pieles.");
-const producto24 = new Producto(24,"Protector solar", "100 gr", 760, "FPS 40. Protege la piel de los rayos solares, UVA y UV. Filtro fisico.");
-const producto25 = new Producto(25,"Gel arce", "100 gr", 530, "Humecta, calma y desinflama la piel luego del rasurado o depilado.");
-const producto26 = new Producto(26,"Mascarilla facial de Arcilla blanca", "100 gr", 500, "Nutre la piel en profundidad, absorbe impurezas y sebo. Arcilla blanca y arbol de te.");
-const producto27 = new Producto(27,"Mascarilla facial de carbon activado", "100 gr", 500, "Nutre la piel en profundidad, absorbe impurezas y sebo. Carbon activado y limon");
-const producto28 = new Producto(28,"Mascarilla facial de cacao", "100 gr", 500, "Nutre la piel en profundidad, absorbe impurezas y sebo. Cacao y vainilla");
-const producto29 = new Producto(29,"Discos desmaquillantes", "4 unidades", 550, "Kit de 4 unidades, 2 simples y 2 dobles.");
-
-//creo un array para almacenar los productos
-let productos = [producto1, producto2, producto3, producto4, producto5, producto6, producto7, producto8, producto9, producto10, producto11, producto12, producto13, producto14, producto15, producto16, producto17, producto18, producto19, producto20, producto21, producto22, producto23, producto24, producto25, producto26, producto27, producto28, producto29];
-
 //Creo una variable para manipular el div productos
-let divProductos = document.getElementById('productos')
+let divProductos = document.getElementById('productos');
 
-//Creo un for each para recorrer el array y asignarle a cada tarjeta la informacion de su producto
-productos.forEach((producto, indice) => {
-    divProductos.innerHTML += `
-    <div class="card" id="producto${producto.id}" style="width: 18rem;">
-        <img src="../multimedia/productos/producto${producto.id}.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">${producto.nombre}</h5>
-            <p class="card-text">Cantidad: ${producto.cantidad}</p>
-            <p class="card-text">Precio: $${producto.precio} </p>
-            <p class="card-text">Descripcion: ${producto.descripcion}</p>
-            <a href="#" class="btn btn-primary"  id="boton${producto.id}"  name="boton${producto.id}">Agregar</a>
-        </div>
-    </div>
-    `
+//Llamo a mis productos del json, Creo un for each para recorrer el array y asignarle a cada tarjeta la informacion de su producto
+fetch('../productos.json')
+.then(response => response.json())
+.then(productos => {
+    productos.forEach((producto, indice)=> {
+        divProductos.innerHTML += `
+            <div class="card" id="producto${producto.id}" style="width: 18rem;">
+                <img src="../multimedia/productos/producto${producto.id}.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">${producto.nombre}</h5>
+                    <p class="card-text">Cantidad: ${producto.cantidad}</p>
+                    <p class="card-text">Precio: $${producto.precio} </p>
+                    <p class="card-text">Descripcion: ${producto.descripcion}</p>
+                    <a href="#" class="btn btn-primary"  id="boton${producto.id}"  name="boton${producto.id}">Agregar</a>
+                </div>
+            </div>
+        `
+    })
 })
 
 //creo el array para guardar los nombres de los productos
@@ -67,21 +26,15 @@ let concatProduct = [];
 //creo un array para guardar los precios
 let precios = [];
 
-//creo una funcion con una variable que traiga los precios del local storage y los sume; y me retorne el precio final de la compra
-function precioFinal() {
-    let preciosLocalStorage = JSON.parse(localStorage.getItem("precios"));
-    let suma = (valorAnterior, valorNuevo) => valorAnterior + valorNuevo;
-    return preciosLocalStorage.reduce(suma);
-}
-
-
-//funciones del boton agregar:
 //creo funcion para avisar que el producto se agrego al carrito
 function agregado() {
     alert("Su producto fue agregado al carrito con éxito")
 }
 
-//recorro los productos, creo la variable para el boton, escucho el evento click y le doy una funcion de agregar el nombre de los productos agregados y el precio a las diferentes key y muestro alert de que el producto fue agregado con exito
+//traigo los productos del JSON, recorro los productos, creo la variable para el boton, escucho el evento click y le doy una funcion de agregar el nombre de los productos agregados y el precio a las diferentes key y llamo a la funcion agregado
+fetch('../productos.json')
+.then(response => response.json())
+.then(productos => {
 for (let producto of productos){
     let btAgregar = document.getElementById(`boton${producto.id}`);
     btAgregar.addEventListener('click', agregarProducto);
@@ -93,6 +46,7 @@ for (let producto of productos){
         agregado();
     }
 }
+})
 
 //creo una variable para asignarle el boton del carrito
 let btnCarrito = document.getElementById('carritoBtn');
@@ -100,17 +54,24 @@ let btnCarrito = document.getElementById('carritoBtn');
 //creo una variable para seleccionar el div donde voy a insertar el html en la tabla de productos
 let tablaCarrito = document.getElementById('tablaProd');
 
-//devuelvo los productos y precios dentro de una tabla en el carrito
+//devuelvo los productos y precios dentro de una tabla en el carrito si es que seleccionaron productos, de lo contrario digo que el carrito esta vacio.
 function llamoCarrito() {
     let misProductos = JSON.parse(localStorage.getItem("carrito"));
     let misPrecios = JSON.parse(localStorage.getItem("precios"));
-    for (let i = 0; i < misProductos.length; i+=1){
+    if (misProductos == null) {
         tablaCarrito.innerHTML += `
-            <tr>
-                <td>${misProductos[i]}  </td>
-                <td> $${misPrecios[i]}</td>
-            </tr>
+            <p>Su carrito esta vacio</p>
         `
+    }
+    else {
+        for (let i = 0; i < misProductos.length; i+=1){
+            tablaCarrito.innerHTML += `
+                <tr>
+                    <td>${misProductos[i]}  </td>
+                    <td> $${misPrecios[i]}</td>
+                </tr>
+            `
+        }
     }
 }
 
@@ -119,29 +80,60 @@ btnCarrito.onclick = () =>{
     llamoCarrito();
 }
 
-//creo el boton cerrar del carrito
-let botonCerrar = document.getElementById("btnCerrar")
+//creo la variable para el boton cerrar del carrito
+let btnCerrar = document.getElementById("btnCerrar")
 //creo el div donde voy a imprimir el precio total de la compra
 let divTotal = document.getElementById("totalFinal")
 
 //cuando hagan click en el boton cerrar ya no van a acumularse los productos y los precios totales repetidamente
-botonCerrar.onclick = () =>{
+btnCerrar.onclick = () =>{
+tablaCarrito.innerHTML="";
+divTotal.innerHTML="";
+}
+
+//creo variable para el boton que limpia al carrito
+let botonRefresh = document.getElementById("refresh")
+
+//creo evento para el boton que limpia al carrito, le doy funcion de actualizar la pagina, borrar las key del local storage y dejar vacio el carrito
+botonRefresh.onclick = () =>{
+    location.reload()
+    localStorage.removeItem('carrito');
+    localStorage.removeItem('precios');
     tablaCarrito.innerHTML="";
     divTotal.innerHTML="";
 }
 
-//creo un h4 que muestre el precio final de la compra, cuando hagan click en el boton carrito 
+//creo una funcion con una variable que traiga los precios del local storage y los sume; y me retorne el precio final de la compra
+function precioFinal() {
+    let preciosLocalStorage = JSON.parse(localStorage.getItem("precios"));
+    let suma = (valorAnterior, valorNuevo) => valorAnterior + valorNuevo;
+    return preciosLocalStorage.reduce(suma);
+}
+
+//creo un h4 que muestre el precio final de la compra, cuando hagan click en el boton carrito, si no seleccionaron productos muestra valor cero
 $(() => {
     $("#carritoBtn").click(function() {
-        $("#totalFinal").append(`<h4>El valor total de su compra es de: $${precioFinal()}</h4>`);
+        let misPrecios = JSON.parse(localStorage.getItem("precios"));
+        if (misPrecios == null) {
+            $("#totalFinal").append(`<h4>El valor total de su compra es de: $0</h4>`);
+        } else {
+            $("#totalFinal").append(`<h4>El valor total de su compra es de: $${precioFinal()}</h4>`);
+        }
     }),
     //creo animaciones anidadas en las cards
     $(".card").hide().show(1000)
     })
 
-//creo una variable para el boton fin, escucho el evento fin, muestro un alert y refresco la pagina
+//creo una variable para el boton que finaliza la compra
     let finalizar = document.getElementById("fin");
+
+//creo evento para el boton que finaliza la compra, traigo el contenido del carrito del local storage, si no tiene nada devuelvo mensaje, de lo contrario redirijo a la pagina del formulario
     finalizar.onclick = () =>{
-        alert("Muchas gracias por su compra!")
-        location.reload();
+        let misProductos = JSON.parse(localStorage.getItem("carrito"));
+        if (misProductos == null) {
+            alert("El carrito debe tener al menos un producto para poder finalizar la compra.")
+        } else {
+            window.location.href='formulario.html'
     }
+}
+

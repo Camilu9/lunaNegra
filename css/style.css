@@ -206,3 +206,18 @@ funcion flexbox, wrap, centro el texto y los contenedores de algunos divs
 .segunda div {
   display: flex;
   justify-content: space-between; }
+
+#bodyForm {
+  background-color: #b7b7a4; }
+
+#bodyForm h1 {
+  color: #6b705c;
+  text-decoration: underline; }
+
+#envioForm {
+  background-color: #6b705c;
+  margin: 5%; }
+
+#bodyForm {
+  display: flex;
+  justify-content: center; }
