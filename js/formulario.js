@@ -27,19 +27,14 @@ formulario.addEventListener('submit', (e) => {
     formulario.reset();
 })
 
-//creo variable para llamar al div donde devuelvo los datos del cliente
-let datosIngresados = document.getElementById("datosCliente")
 //creo una variable para acceder al boton del formulario
 let btnForm = document.getElementById("envioForm")
 
-//creo evento click, traigo el objeto guardado en local storage, lo recorro y escribo en el html
+//creo evento click, traigo el objeto guardado en local storage, lo recorro, devuelvo info en alert y redirijo a la pagina de inicio
 btnForm.onclick = () =>{
     let clienteGuardado = JSON.parse(localStorage.getItem("datos"))
     clienteGuardado.forEach((cliente) => {
-        datosIngresados.innerHTML += `
-            <p>La compra sera entregada a: ${cliente.nombre} ${cliente.apellido}</p>
-            <p>En: ${cliente.direccion}, ciudad de ${cliente.ciudad}, provincia de ${cliente.provincia}, en el transcurso de las proximas 48 horas.</p>
-            <p>Muchas gracias por su compra!</p>
-            `
+        alert("La compra sera entregada a: "+cliente.nombre+" "+cliente.apellido+"\n En: "+cliente.direccion+", ciudad de "+cliente.ciudad+", provincia de "+cliente.provincia+"\n en el transcurso de las próximas 48 horas.\n Muchas gracias por su compra!")
+        window.location.href='../index.html'
     })
 }

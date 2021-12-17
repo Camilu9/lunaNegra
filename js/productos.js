@@ -66,10 +66,10 @@ function llamoCarrito() {
     else {
         for (let i = 0; i < misProductos.length; i+=1){
             tablaCarrito.innerHTML += `
-                <tr>
-                    <td>${misProductos[i]}  </td>
-                    <td> $${misPrecios[i]}</td>
-                </tr>
+            <tr>
+                <td>${misProductos[i]}</td>
+                <td> $${misPrecios[i]}</td>
+            </tr>
             `
         }
     }
@@ -112,7 +112,7 @@ function precioFinal() {
 
 //creo un h4 que muestre el precio final de la compra, cuando hagan click en el boton carrito, si no seleccionaron productos muestra valor cero
 $(() => {
-    $("#carritoBtn").click(function() {
+    $("#carritoBtn").click(function mensajePrecio() {
         let misPrecios = JSON.parse(localStorage.getItem("precios"));
         if (misPrecios == null) {
             $("#totalFinal").append(`<h4>El valor total de su compra es de: $0</h4>`);
@@ -121,8 +121,9 @@ $(() => {
         }
     }),
     //creo animaciones anidadas en las cards
-    $(".card").hide(2000).show(1000)
-    })
+    $(".card").hide(20000)
+    .show(30000);
+})
 
 //creo una variable para el boton que finaliza la compra
     let finalizar = document.getElementById("fin");
