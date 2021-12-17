@@ -35,6 +35,6 @@ btnForm.onclick = () =>{
     let clienteGuardado = JSON.parse(localStorage.getItem("datos"))
     clienteGuardado.forEach((cliente) => {
         alert("La compra sera entregada a: "+cliente.nombre+" "+cliente.apellido+"\n En: "+cliente.direccion+", ciudad de "+cliente.ciudad+", provincia de "+cliente.provincia+"\n en el transcurso de las próximas 48 horas.\n Muchas gracias por su compra!")
-        window.location.href='../index.html'
     })
+    window.location.href='../index.html'
 }
