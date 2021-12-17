@@ -5,15 +5,15 @@ let divProductos = document.getElementById('productos');
 fetch('../productos.json')
 .then(response => response.json())
 .then(productos => {
-    productos.forEach((producto, indice)=> {
+    productos.forEach((producto)=> {
         divProductos.innerHTML += `
             <div class="card" id="producto${producto.id}" style="width: 18rem;">
                 <img src="../multimedia/productos/producto${producto.id}.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">${producto.nombre}</h5>
+                    <h5 class="card-title titulo">${producto.nombre}</h5>
                     <p class="card-text">Cantidad: ${producto.cantidad}</p>
                     <p class="card-text">Precio: $${producto.precio} </p>
-                    <p class="card-text">Descripcion: ${producto.descripcion}</p>
+                    <p class="card-text descripcion">Descripcion: ${producto.descripcion}</p>
                     <a href="#" class="btn btn-primary"  id="boton${producto.id}"  name="boton${producto.id}">Agregar</a>
                 </div>
             </div>
@@ -121,7 +121,7 @@ $(() => {
         }
     }),
     //creo animaciones anidadas en las cards
-    $(".card").hide(20).show(1000)
+    $(".card").hide(2000).show(1000)
     })
 
 //creo una variable para el boton que finaliza la compra

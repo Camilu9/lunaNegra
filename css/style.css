@@ -128,6 +128,12 @@ footer {
 .card {
   margin: 2%; }
 
+.descripcion {
+  height: 115px; }
+
+.titulo {
+  height: 45px; }
+
 .carrito {
   display: flex;
   justify-content: center;

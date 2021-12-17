@@ -1,31 +1,31 @@
 [
     {
         "id": 1,
-        "nombre": "Shampoo solido de romero",
+        "nombre": "Shampoo sólido de romero",
         "cantidad": "110 gr",
         "precio": 700,
         "descripcion": "Limpia el cabello y el cuero cabelludo sin dejar exceso de oleosidad. Para cabellos grasos."
     },
     {
         "id": 2,
-        "nombre": "Shampoo solido de geranio",
+        "nombre": "Shampoo sólido de geranio",
         "cantidad": "110gr",
         "precio": 700,
         "descripcion": "Limpia el cabello y el cuero cabelludo sin dejar exceso de oleosidad. Para cabellos secos."
     },
     {
         "id": 3,
-        "nombre": "Acondicionador solido de vainilla",
+        "nombre": "Acondicionador sólido de vainilla",
         "cantidad": "50 gr",
         "precio": 580,
-        "descripcion": "Nutre el cabello y sella las cuticulas del mismo post lavado. Para cabellos debiles."
+        "descripcion": "Nutre el cabello y sella las cutículas del mismo post lavado. Para cabellos débiles."
     },
     {
         "id": 4,
-        "nombre": "Acondicionador solido de azahar",
+        "nombre": "Acondicionador sólido de azahar",
         "cantidad": "50 gr",
         "precio": 580,
-        "descripcion": "Nutre el cabello y sella las cuticulas del mismo post lavado. Para cabellos secos."
+        "descripcion": "Nutre el cabello y sella las cutículas del mismo post lavado. Para cabellos secos."
     },
     {
         "id": 5,
@@ -39,32 +39,32 @@
         "nombre": "Gel dental",
         "cantidad": "100 gr",
         "precio": 530,
-        "descripcion": "Limpia y desinfecta la boca. Poder antibacteriano y antifungico."
+        "descripcion": "Limpia y desinfecta la boca. Poder antibacteriano y antifúngico."
     },
     {
         "id": 7,
-        "nombre": "Desodorante solido",
+        "nombre": "Desodorante sólido",
         "cantidad": "45 gr",
         "precio": 470,
-        "descripcion": "Evita la proliferacion de olores en las axilas sin obstruir los poros. Antibacteriano y antifungico."
+        "descripcion": "Evita la proliferación de olores en las axilas sin obstruir los poros. Antibacteriano y antifúngico."
     },
     {
         "id": 8,
         "nombre": "Desodorante en crema",
         "cantidad": "100 gr",
         "precio": 470,
-        "descripcion": "Evita la proliferacion de olores en las axilas sin obstruir los poros. Antibacteriano y antifungico."
+        "descripcion": "Evita la proliferacion de olores en las axilas sin obstruir los poros. Antibacteriano y antifúngico."
     },
     {
         "id": 9,
-        "nombre": "Balsamo labial",
+        "nombre": "Bálsamo labial",
         "cantidad": "13 gr",
         "precio": 300,
         "descripcion": "Humecta y repara la piel de los labios. Vainilla."
     },
     {
         "id": 10,
-        "nombre": "Oleo corporal",
+        "nombre": "Óleo corporal",
         "cantidad": "35 gr",
         "precio": 350,
         "descripcion": "Humecta y nutre la piel del cuerpo. Trata areas resecas. Azahar."
@@ -81,25 +81,25 @@
         "nombre": "Crema corporal",
         "cantidad": "250 gr",
         "precio": 1160,
-        "descripcion": "Hidrata, humecta y nutre la piel del cuerpo. Brinda proteccion y suavidad."
+        "descripcion": "Hidrata, humecta y nutre la piel del cuerpo. Brinda protección y suavidad."
     },
     {
         "id": 13,
-        "nombre": "Jabon facial Madagascar",
+        "nombre": "Jabón facial Madagascar",
         "cantidad": "30 gr",
         "precio": 350,
         "descripcion": "Realiza una limpieza profunda del rostro de acuerdo a sus necesidades. Pieles secas. Uso diario."
     },
     {
         "id": 14,
-        "nombre": "Jabon facial Amazonia",
+        "nombre": "Jabón facial Amazonia",
         "cantidad": "30 gr",
         "precio": 350,
         "descripcion": "Realiza una limpieza profunda del rostro de acuerdo a sus necesidades. Pieles grasas. Uso diario."
     },
     {
         "id": 15,
-        "nombre": "Jabon facial Malesia",
+        "nombre": "Jabón facial Malesia",
         "cantidad": "30 gr",
         "precio": 350,
         "descripcion": "Realiza una limpieza profunda del rostro de acuerdo a sus necesidades. Pieles sensibles y maduras. Uso diario."
@@ -116,14 +116,14 @@
         "nombre": "Hidrolato de lavanda",
         "cantidad": "100 cc",
         "precio": 520,
-        "descripcion": "Tonico natural."
+        "descripcion": "Tónico natural."
     },
     {
         "id": 18,
         "nombre": "Hidrolato de romero",
         "cantidad": "100 cc",
         "precio": 520,
-        "descripcion": "Tonico natural."
+        "descripcion": "Tónico natural."
     },
     {
         "id": 19,
@@ -134,7 +134,7 @@
     },
     {
         "id": 20,
-        "nombre": "Agua micelar de romero y arbol de te",
+        "nombre": "Agua micelar de romero y árbol de té",
         "cantidad": "100 cc",
         "precio": 470,
         "descripcion": "Limpia y nutre la piel del rostro. Pieles grasas."
@@ -165,7 +165,7 @@
         "nombre": "Protector solar",
         "cantidad": "100 gr",
         "precio": 760,
-        "descripcion": "FPS 40. Protege la piel de los rayos solares, UVA y UV. Filtro fisico."
+        "descripcion": "FPS 40. Protege la piel de los rayos solares, UVA y UV. Filtro físico."
     },
     {
         "id": 25,
@@ -176,17 +176,17 @@
     },
     {
         "id": 26,
-        "nombre": "Mascarilla facial de Arcilla blanca",
+        "nombre": "Mascarilla facial de arcilla blanca",
         "cantidad": "100 gr",
         "precio": 500,
-        "descripcion": "Nutre la piel en profundidad, absorbe impurezas y sebo. Arcilla blanca y arbol de te."
+        "descripcion": "Nutre la piel en profundidad, absorbe impurezas y sebo. Arcilla blanca y árbol de té."
     },
     {
         "id": 27,
-        "nombre": "Mascarilla facial de carbon activado",
+        "nombre": "Mascarilla facial de carbón activado",
         "cantidad": "100 gr",
         "precio": 500,
-        "descripcion": "Nutre la piel en profundidad, absorbe impurezas y sebo. Carbon activado y limon"
+        "descripcion": "Nutre la piel en profundidad, absorbe impurezas y sebo. Carbón activado y limón"
     },
     {
         "id": 28,

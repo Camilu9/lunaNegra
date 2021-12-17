@@ -8,6 +8,14 @@
     margin: 2%;
 }
 
+//doy tamaño a la descripcion y el titulo de las cards
+.descripcion{
+    height: 115px;
+}
+.titulo{
+    height: 45px;
+}
+
 //doy estilo al carrito
 .carrito {
     display: flex;
